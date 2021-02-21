@@ -107,6 +107,7 @@ def exec_pg_environ():
 
     See also http://www.postgresql.org/docs/8.4/static/libpq-envars.html
     """
+    print("what the fuck")
     env = os.environ.copy()
     if odoo.tools.config['db_host']:
         env['PGHOST'] = odoo.tools.config['db_host']

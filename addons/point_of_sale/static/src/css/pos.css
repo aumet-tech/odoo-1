@@ -319,7 +319,7 @@ td {
     margin:0;
     padding:0;
     color: gray;
-    background: #875A7B;
+    background: #05bca6;
     display: flex;
 }
 
@@ -368,7 +368,7 @@ td {
     overflow-x: auto;
 }
 .pos .pos-rightheader > * {
-    border-right: 1px solid #875A7B;
+    border-right: 1px solid #05bca6;
 }
 
 .pos .status-buttons-portal {
@@ -1121,7 +1121,7 @@ td {
     /*background:#FFF;*/
     padding: 3px;
     padding-top: 15px;
-    color: #7C7BAD;
+    color: #12b9a9;
 }
 
 /*  e) the product */
