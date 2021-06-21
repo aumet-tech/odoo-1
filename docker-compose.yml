@@ -1,0 +1,45 @@
+
+version: '3'
+services:
+  db:
+    image: postgres
+    container_name: aumet-postgres
+    hostname: aumet-postgres
+    restart: always
+    volumes:
+      - db-data:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432/tcp
+    environment:
+    - POSTGRES_PASSWORD=aumet-password
+    - POSTGRES_USER=aumet-user
+    - POSTGRES_DB=postgres
+    - PGDATA=/var/lib/postgresql/data/pgdata
+
+    networks:
+      - aumet
+  web:
+    image: aumet-odoo
+    depends_on:
+      - db
+
+    ports:
+      - "8069:8069/tcp"
+    volumes:
+      - web-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+    networks:
+      - aumet
+
+volumes:
+  db-data:
+    driver: local
+  web-data:
+    driver: local
+
+networks:
+  aumet:
+    driver: bridge
+    external:
+      name: aumet

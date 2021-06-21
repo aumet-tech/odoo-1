@@ -580,6 +580,7 @@ class ConnectionPool(object):
         :rtype: PsycoConnection
         """
         # free dead and leaked connections
+        _logger.info("WHAT THE FUCK")
         for i, (cnx, _) in tools.reverse_enumerate(self._connections):
             if cnx.closed:
                 self._connections.pop(i)
@@ -621,6 +622,9 @@ class ConnectionPool(object):
                 raise PoolError('The Connection Pool Is Full')
 
         try:
+            _logger.info(connection_info)
+
+            _logger.info(connection_info) #todo remove me
             result = psycopg2.connect(
                 connection_factory=PsycoConnection,
                 **connection_info)

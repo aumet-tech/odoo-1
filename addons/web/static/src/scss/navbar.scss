@@ -22,7 +22,7 @@ body.o_is_superuser .o_menu_systray {
     position: relative;
     height: $o-navbar-height;
     border-bottom: 1px solid $o-navbar-inverse-link-hover-bg;
-    background-color: $o-brand-odoo;
+    background-color: #04bca6;
     color: white;
 
     > a, > button {

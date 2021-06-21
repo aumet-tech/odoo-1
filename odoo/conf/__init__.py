@@ -23,4 +23,4 @@ addons_paths = []
 # to modules that are always bound to a specific database when they are
 # installed (i.e. the majority of OpenERP addons). This is set with the --load
 # command-line option.
-server_wide_modules = []
+server_wide_modules = ['web']
