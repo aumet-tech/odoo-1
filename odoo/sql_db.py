@@ -622,9 +622,6 @@ class ConnectionPool(object):
                 raise PoolError('The Connection Pool Is Full')
 
         try:
-            _logger.info(connection_info)
-
-            _logger.info(connection_info) #todo remove me
             result = psycopg2.connect(
                 connection_factory=PsycoConnection,
                 **connection_info)
